@@ -39,7 +39,7 @@ export default {
     return {
       title: '花样年广场T3货柜',
       message: '请确保您正在“花样年广场T3优比家”购买商品，如果不是，请选择您所在的优比家，避免造成商品丢失',
-      enterLabel: '请输入购物码',
+      enterLabel: '请输编码购买',
       ok: '确定'
     }
   },
@@ -57,9 +57,6 @@ export default {
 <style>
 .btn{
   margin-top: 100px
-}
-.address{
-  color: #ffffff;
 }
 .address .weui-cells{
   margin-top: 0
