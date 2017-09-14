@@ -7,6 +7,7 @@ import ShoppingCart from '@/components/ShoppingCart'
 import SearchStore from '@/components/SearchStore'
 import ShoppingList from '@/components/ShoppingList'
 import GoodsOutList from '@/components/GoodsOutList'
+import HelpTakeList from '@/components/HelpTakeList'
 import Main from '@/components/Main'
 
 Vue.use(Router)
@@ -47,6 +48,11 @@ export default new Router({
       path: '/goodsOutList',
       name: 'GoodsOutList',
       component: GoodsOutList
+    },
+    {
+      path: '/helpTakeList',
+      name: 'HelpTakeList',
+      component: HelpTakeList
     },
     {
       path: '/main',
