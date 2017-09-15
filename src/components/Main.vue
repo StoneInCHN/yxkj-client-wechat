@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div>
     <x-header title="附近的优享空间" v-if="showHeader"></x-header>
     <div class="main-content">
       <group class="address">
@@ -42,25 +42,29 @@
         </swiper>
       </div>
     </div>
-    <div class="main-footer">
-       <div class="cart-goods" v-if="showGoods">
-          <group class="cart">
-            <cell title="已选商品" value="清空列表"></cell>
-            <cart v-for= "item in items" :item="item" :key="item.id" :showTotalPrice="showTotalPrice"></cart>
-          </group>
-       </div>
-       <div class="cart-content">
-          <img  class="cart-logo" src="../assets/logo.png" alt="logo" @click="showGoodsInfo">
-          <badge :text="goodsCount"></badge>
-          <button class="cart-btn" @click="goShoppingList">去支付</button>
-          <p class="cart-info"><span>合计:￥</span><strong>50</strong></p>
-       </div>
-    </div>
+    <tabbar>
+      <tabbar-item>
+        <template slot="label">
+          <div class="cart-goods" v-if="showGoods">
+            <group class="cart">
+              <cell title="已选商品" value="清空列表"></cell>
+              <cart v-for= "item in items" :item="item" :key="item.id" :showTotalPrice="showTotalPrice"></cart>
+            </group>
+         </div>
+         <div class="cart-content">
+            <img  class="cart-logo" src="../assets/logo.png" alt="logo" @click="showGoodsInfo">
+            <badge :text="goodsCount"></badge>
+            <button class="cart-btn" @click="goShoppingList">去支付</button>
+            <p class="cart-info"><span>合计:￥</span><strong>50</strong></p>
+         </div>
+        </template>
+      </tabbar-item>
+    </tabbar>
   </div>
 </template>
 
 <script>
-import { XHeader, XButton, Group, Cell, Toast, Swiper, SwiperItem, Search, Tab, TabItem, Grid, GridItem, Badge } from 'vux'
+import { XHeader, XButton, Group, Cell, Toast, Swiper, SwiperItem, Search, Tab, TabItem, Grid, GridItem, Badge, Tabbar, TabbarItem } from 'vux'
 import BScroll from 'better-scroll'
 import Cart from '@/components/ShoppingCart'
 
@@ -101,7 +105,9 @@ export default {
     Grid,
     GridItem,
     Badge,
-    Cart
+    Cart,
+    Tabbar,
+    TabbarItem
   },
   data () {
     return {
@@ -154,9 +160,6 @@ export default {
 </script>
 
 <style>
-.main{
-  position: relative;
-}
 .main-content{
   height: 100%;
   overflow-x: hidden;
@@ -247,12 +250,6 @@ export default {
   float: right;
   width: 25px;
   margin-right: 10px;
-}
-.main-footer{
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: -64px;
 }
 .cart-goods{
 
