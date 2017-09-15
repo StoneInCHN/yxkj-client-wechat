@@ -39,7 +39,7 @@ export default {
   },
   computed: {
     priceStr () {
-      return '￥' + this.item.price
+      return '￥' + this.item.price.toFixed(2)
     }
   }
 }
@@ -47,7 +47,8 @@ export default {
 
 <style >
 .title{
-  color: #333333
+  color: #333333;
+  font-size: 14px
 }
 .name{
   color: #999999;

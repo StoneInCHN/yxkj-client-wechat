@@ -3,8 +3,8 @@
     <x-header title="商品出柜"></x-header>
     <div v-for= "itemGoods in items">
       <span class="category">
-        <div align="center" class="category-ok" v-if="itemGoods.categoryStatus">{{itemGoods.category}}</div>
-        <div align="center" class="category-error" v-else>{{itemGoods.category}}</div>
+        <div align="center" class="category-error" 
+            :class="{'category-ok': itemGoods.categoryStatus}">{{itemGoods.category}}</div>
       </span>
       <group class="cart">
         <goods v-for= "item in itemGoods.list" :item="item" :key="item.id"></goods>
@@ -99,12 +99,7 @@ export default {
   font-size:10px;
 }
 .category-ok{
-  width: 60px;
-  height:20px;
-  border-radius: 5px;
-  color: #fff;
-  background-color: #89B53F;
-  margin:10px;
+  background-color: #89B53F !important;
 }
 .category-error{
   width: 60px;

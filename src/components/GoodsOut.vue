@@ -9,8 +9,8 @@
         <span slot="value" style="margin-right:40px">
           <span class='number'>x {{item.number}}</span>
         </span>                
-        <x-button type="primary" class="btn-status-ok" v-if="item.status == '已出柜'">{{item.status}}</x-button>
-        <x-button type="primary" class="btn-status-error" v-else>{{item.status}}</x-button>
+        <x-button type="primary" class="btn-status-ok" 
+          :class="{'btn-status-error': item.status == '未出柜'}">{{item.status}}</x-button>
       </cell>
 </template>
 
@@ -49,14 +49,10 @@ export default {
   font-size:6px;
   color:#fff;
   padding:2px 8px;
-  background-color:#89B53F;
+  background-color:#89B53F !important;
 }
 .btn-status-error{
-  border-radius:5px;
-  font-size:6px;
-  color:#fff;
-  padding:2px 8px;
-  background-color:#cccccc;
+  background-color:#cccccc !important;
 }
 .number{
   width:300px !important;

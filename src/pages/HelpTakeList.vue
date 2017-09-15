@@ -7,11 +7,11 @@
     </div>
     <div class="takeTotal">可以领取的商品为(<span>{{takeTotal}}</span>件)</div>
     <group class="groupList">
-      <help v-for= "item in takeList" :item="item" :key="item.id"></help>
+      <GoodsCart v-for= "item in takeList" :item="item" :key="item.id"></GoodsCart>
     </group>
     <div class="takeTotal">缺货的商品(<span>{{shortageTotal}}</span>件)</div>
     <group class="groupList">
-      <help v-for= "item in shortageList" :item="item" :key="item.id"></help>
+      <GoodsCart v-for= "item in shortageList" :item="item" :key="item.id"></GoodsCart>
     </group>
     <div class="bottom-take">
       <div class="bottom-label">请确保你已到{{address}},再点击取货,否者有可能造成商品丢失！</div>
@@ -22,13 +22,13 @@
 
 <script>
 import { XHeader, XButton, Group } from 'vux'
-import Help from '@/components/HelpTake'
+import GoodsCart from '@/components/GoodsCart'
 
 export default {
   components: {
     XHeader,
     XButton,
-    Help,
+    GoodsCart,
     Group
   },
   data () {
@@ -40,14 +40,14 @@ export default {
           id: 1,
           title: '茉莉绿茶',
           name: 'A23',
-          price: '5.00',
+          price: 5,
           number: 3
         },
         {
           id: 2,
           title: '茉莉绿茶',
           name: 'A23',
-          price: '5.00',
+          price: 5,
           number: 3
         }
       ],
@@ -56,7 +56,7 @@ export default {
           id: 1,
           title: '茉莉绿茶',
           name: 'A23',
-          price: '5.00',
+          price: 5,
           number: 3
         }
       ]
