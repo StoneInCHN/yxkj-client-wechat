@@ -5,7 +5,7 @@
           <img width="40"  src="../assets/drink.svg">
         </div>
            <inline-x-number slot="value" width="25px"  v-model="item.number" :min="minValue" button-style="round"></inline-x-number>
-           <p class="total-price">￥{{total}}</p>
+           <p class="total-price" v-if="showTotalPrice">￥{{total}}</p>
       </cell>
 </template>
 
@@ -18,7 +18,7 @@ export default {
     Cell,
     InlineXNumber
   },
-  props: ['item'],
+  props: ['item', 'showTotalPrice'],
   data () {
     return {
       minValue: 0

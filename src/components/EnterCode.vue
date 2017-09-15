@@ -3,7 +3,7 @@
     <x-header title="输码购物"></x-header>
     <group class="address">
       <cell isLink link="searchStore">
-        <img slot="icon" width="20" class="address-icon" src="../assets/localize.png">
+        <img slot="icon" width="20" class="address-icon" src="../assets/address.svg">
         <span slot="title" class="white">{{title}}</span>
       </cell>
     </group>
