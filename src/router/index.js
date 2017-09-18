@@ -9,6 +9,7 @@ import ShoppingList from '@/components/ShoppingList'
 import GoodsOutList from '@/pages/GoodsOutList'
 import HelpTakeList from '@/pages/HelpTakeList'
 import RefundSuccess from '@/pages/RefundSuccess'
+import PayComplete from '@/pages/PayComplete'
 import Main from '@/components/Main'
 
 Vue.use(Router)
@@ -59,6 +60,11 @@ export default new Router({
       path: '/refundSuccess',
       name: 'RefundSuccess',
       component: RefundSuccess
+    },
+    {
+      path: '/payComplete',
+      name: 'PayComplete',
+      component: PayComplete
     },
     {
       path: '/main',

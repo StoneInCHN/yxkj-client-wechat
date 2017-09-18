@@ -20,7 +20,7 @@
         <group title="选择支付方式">
           <radio :options="radio001" @on-change="change" class="text-align-left"></radio>
         </group>
-        <x-button>确认支付</x-button>
+        <x-button link="../payComplete">确认支付</x-button>
       </div>
     </actionsheet>
   </div>

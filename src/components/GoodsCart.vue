@@ -76,6 +76,7 @@ export default {
 }
 .number{
   width:300px !important;
+  color: #666;
 }
 
 </style>
