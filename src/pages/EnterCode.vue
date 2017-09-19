@@ -45,11 +45,13 @@ export default {
   },
   created () {
     this.$vux.toast.show({
-      text: this.message,
+      text: '<div class = "toast">' + this.message + '</div>',
       time: 5000,
-      width: '200px',
+      width: '300px',
       type: 'text'
     })
+  },
+  computed: {
   }
 }
 </script>
@@ -102,5 +104,10 @@ export default {
   bottom: 0px;
   height:30px;
   width:100%;
+}
+.toast{
+  padding: 10px 20px;
+  width: 260px;
+  text-align: left;
 }
 </style>

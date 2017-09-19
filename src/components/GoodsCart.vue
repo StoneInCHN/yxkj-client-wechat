@@ -1,6 +1,6 @@
 <template>
       <cell>
-        <div slot="icon" style="margin:auto 20px">
+        <div slot="icon" style="margin:auto 10px">
           <img width="40" style=""  src="../assets/drink.svg">
         </div>
         <div slot="title">
@@ -54,7 +54,7 @@ export default {
   font-size: 12px
 }
 .price{
-  color: #FF1E1E
+  color: #FF1E1E;
 }
 .cart-title span{
   font-size: 10px

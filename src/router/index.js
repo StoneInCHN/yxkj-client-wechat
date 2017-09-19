@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import ScanCode from '@/components/ScanCode'
-import EnterCode from '@/components/EnterCode'
-import ShoppingCart from '@/components/ShoppingCart'
-import SearchStore from '@/components/SearchStore'
-import ShoppingList from '@/components/ShoppingList'
+import Home from '@/pages/Home'
+import ScanCode from '@/pages/ScanCode'
+import EnterCode from '@/pages/EnterCode'
+import SearchStore from '@/pages/SearchStore'
+import ShoppingList from '@/pages/ShoppingList'
 import GoodsOutList from '@/pages/GoodsOutList'
 import HelpTakeList from '@/pages/HelpTakeList'
 import RefundSuccess from '@/pages/RefundSuccess'
 import PayComplete from '@/pages/PayComplete'
-import Main from '@/components/Main'
+import WaitTakeList from '@/pages/WaitTakeList'
+import Main from '@/pages/Main'
 
 Vue.use(Router)
 
@@ -25,11 +25,6 @@ export default new Router({
       path: '/scanCode',
       name: 'ScanCode',
       component: ScanCode
-    },
-    {
-      path: '/shoppingCart',
-      name: 'ShoppingCart',
-      component: ShoppingCart
     },
     {
       path: '/enterCode',
@@ -65,6 +60,11 @@ export default new Router({
       path: '/payComplete',
       name: 'PayComplete',
       component: PayComplete
+    },
+    {
+      path: '/waitTakeList',
+      name: 'WaitTakeList',
+      component: WaitTakeList
     },
     {
       path: '/main',

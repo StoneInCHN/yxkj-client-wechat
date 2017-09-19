@@ -6,7 +6,7 @@
       <x-button type="primary" @click.native="showScanArea" class="scan-buy">
         <img width="10%" src="../assets/scan.png">
         <span>请扫码进行购买</span>
-    </x-button>
+      </x-button>
     </div>
     <div v-else class="scanArea">
         <div class="area" align="center">
@@ -59,7 +59,7 @@ export default {
   .scan-buy{
     border-radius:30px !important;
     background-color:#FD8918 !important;
-    width: 80% !important;
+    width: 70% !important;
     height: 50px;
   }
   .scan-buy span{

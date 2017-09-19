@@ -19,7 +19,7 @@
            <span @click="goPickUp">取货</span>
            <ul class="nav-li" v-if="pickUp">
             <li><a href="#/main">线上货柜</a></li>
-            <li><a href="#/shoppingList">待取商品</a></li>
+            <li><a href="#/waitTakeList">待取商品</a></li>
           </ul>
         </span>
       </tabbar-item>
