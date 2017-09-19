@@ -16,7 +16,7 @@
       <span>缺货的商品(<label>{{shortageTotal}}</label>件)</span>
       <span class="refundBtn" @click="refund"><label>全部退款</label></span>
     </div>
-    <group class="groupList">
+    <group class="groupList" style="margin-bottom: 300px">
       <RefundCart v-for= "item in shortageList" :item="item" :key="item.id"></RefundCart>
     </group>
     <div class="bottom-take">
@@ -183,7 +183,7 @@ export default {
   margin-right: 10px;
 }
 .bottom-take{
-  position: absolute;
+  position: fixed;
   bottom: 110px;
   height:110px;
   width:100%;
@@ -204,7 +204,7 @@ export default {
   background-color:#89B53F;
 }
 .helpTake{
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   height:110px;
   width:100%;

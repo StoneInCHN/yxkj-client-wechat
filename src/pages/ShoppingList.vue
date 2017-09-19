@@ -5,11 +5,11 @@
       <ShoppingCart v-for= "item in items" :item="item" :key="item.id"></ShoppingCart>
     </group>
     <div class="scan-btn-again" v-if="showScanBtn">
-      <x-button type="primary" @click.native="showScanArea" class="scan-buy">
+      <x-button type="primary" class="scan-buy">
         <img width="10%" src="../assets/scan.png">
         <span>继续扫码购买</span>
       </x-button>
-    </div>  
+    </div>
     <tabbar class="bottomTab">
       <tabbar-item class="leftTab">
         <span slot="label">清空列表</span>
@@ -80,6 +80,34 @@ export default {
         price: 5,
         name: 'A23',
         number: 1
+      },
+      {
+        id: 5,
+        title: '茉莉花茶',
+        price: 5,
+        name: 'A23',
+        number: 1
+      },
+      {
+        id: 6,
+        title: '康师傅冰红茶',
+        price: 3.5,
+        name: 'A23',
+        number: 1
+      },
+      {
+        id: 7,
+        title: '茉莉花茶',
+        price: 5,
+        name: 'A23',
+        number: 1
+      },
+      {
+        id: 8,
+        title: '康师傅冰红茶',
+        price: 3.5,
+        name: 'A23',
+        number: 1
       }],
       showPayType: false,
       payWayDefault: '001',
@@ -126,8 +154,13 @@ export default {
   height: 100px;
 }
 .scan-btn-again{
-  margin-top: 20px;
+  margin: 20px auto 80px auto;
   padding:auto 0;
+  width: 70%;
+}
+.bottomTab{
+  position: fixed;
+  bottom: 0px;
 }
 .bottomTab span{
   text-align: center;
