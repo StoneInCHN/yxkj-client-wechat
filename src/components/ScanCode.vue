@@ -1,15 +1,22 @@
 <template>
   <div>
+    <div class="backImage" :style ="backImage">
     <x-header title="扫码购物"></x-header>
     <div class="scan-btn" v-if="showBtn">
-      <x-button class="btn" @click.native="showScanArea">请扫码进行购买</x-button>
+      <x-button type="primary" @click.native="showScanArea" class="scan-buy">
+        <img width="10%" src="../assets/scan.png">
+        <span>请扫码进行购买</span>
+    </x-button>
     </div>
     <div v-else class="scanArea">
-        <div class="area"></div>
+        <div class="area" align="center">
+          <img width="80%" src="../assets/scan_rectangle_m.png">
+        </div>
         <p class="tips">将条码放入框内，即可自动扫描</p>
         <p>条码识别不出？</p>
-        <p class="tips2" @click="en">手动输入商品编码</p>
+        <p class="tips2" @click="enterCode">手动输入编码</p>
     </div>
+  </div>
   </div>
 </template>
 
@@ -23,31 +30,50 @@ export default {
   },
   data () {
     return {
-      showBtn: true
+      showBtn: true,
+      backImage: {
+        backgroundImage: 'url(' + require('../assets/scan_background.png') + ')',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '100% auto',
+        marginTop: '0px'
+      }
     }
   },
   methods: {
     showScanArea () {
       console.log('scan')
       this.showBtn = !this.showBtn
+    },
+    enterCode () {
+      window.location.href = '#/enterCode'
     }
   }
 }
 </script>
 
 <style>
-  .btn{
-    margin-top: 300px;
-  }
   .scan-btn{
+    margin-top: 320px;
     padding: 50px;
+  }
+  .scan-buy{
+    border-radius:30px !important;
+    background-color:#FD8918 !important;
+    width: 80% !important;
+    height: 50px;
+  }
+  .scan-buy span{
+    padding-left: 5px;
+    height: 50px;
+    line-height: 50px;
+  }
+  .scan-buy img{
+    margin-top:10px;
   }
   .scanArea{
     padding: 100px 30px 0 30px
   }
   .area{
-    height: 200px;
-    border: 1px solid #b1b2b2;
     margin-bottom: 20px;
   }
   .scanArea p{
@@ -59,6 +85,6 @@ export default {
     margin-bottom: 50px;
   }
   .tips2{
-    color: blue;
+    color: #FD8918;
   }
 </style>

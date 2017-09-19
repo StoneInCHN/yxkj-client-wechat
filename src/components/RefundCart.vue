@@ -18,6 +18,8 @@
         </div>               
         <span slot="value">
           <span class='number'>{{item.number}} 件</span>
+          <br>
+          <span class="refundBtn" @click="refund"><label>退款</label></span>
         </span>                
       </cell>
 </template>
@@ -33,12 +35,18 @@ export default {
   props: ['item'],
   data () {
     return {
-      minValue: 0
+      showScrollBox: false
     }
   },
   computed: {
     priceStr () {
       return '￥' + this.item.price.toFixed(2)
+    }
+  },
+  methods: {
+    refund: function (event) {
+      this.showScrollBox = true
+      alert(this.showScrollBox)
     }
   }
 }

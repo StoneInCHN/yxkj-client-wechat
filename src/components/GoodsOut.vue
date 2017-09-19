@@ -8,20 +8,20 @@
         </span>   
         <span slot="value" style="margin-right:40px">
           <span class='number'>x {{item.number}}</span>
-        </span>                
-        <x-button type="primary" class="btn-status-ok" 
-          :class="{'btn-status-error': item.status == '未出柜'}">{{item.status}}</x-button>
+        </span>        
+        <span align="center" class="btn-status-ok" 
+            :class="{'btn-status-error': item.status == '未出柜'}">{{item.status}}</span>        
       </cell>
 </template>
 
 <script>
-import { Group, Cell, InlineXNumber } from 'vux'
+import { Group, Cell, XButton } from 'vux'
 
 export default {
   components: {
     Group,
     Cell,
-    InlineXNumber
+    XButton
   },
   props: ['item'],
   data () {
@@ -48,7 +48,6 @@ export default {
   border-radius:5px;
   font-size:6px;
   color:#fff;
-  padding:2px 8px;
   background-color:#89B53F !important;
 }
 .btn-status-error{
